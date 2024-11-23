@@ -18,6 +18,9 @@ hero:
     - theme: alt
       text: Markdown 语法
       link: https://markdown.com.cn/basic-syntax/
+    - theme: alt
+      text: VitePress 文档
+      link: https://vitepress.dev/zh/reference/site-config
 
 features:
   - icon: 🛠️

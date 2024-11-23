@@ -86,9 +86,9 @@ export default defineConfig({
     },
 
     lastUpdated: {
-      text: 'Updated at',
+      text: '最后更新于',
       formatOptions: {
-        dateStyle: 'full',
+        dateStyle: 'short',
         timeStyle: 'medium'
       }
     },

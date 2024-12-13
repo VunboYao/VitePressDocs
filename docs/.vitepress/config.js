@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "VunboYao Book House",
+  title: "VunboYao",
   // meta 描述说明
   description: "个人技能笔记, 由 VitePress 驱动",
   head: [['link', { rel: 'icon', href: '/public/favicon.ico' }]],
@@ -14,23 +14,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: 'Demo', link: '/markdown-examples' },
+      { text: '前端', link: '/front/index.md' },
+      // {
+      //   text: 'Dropdown Menu',
+      //   items: [
+      //     {
+      //       text: '我是标题',
+      //       items: [
+      //         { text: 'Section A Item A', link: '...' },
+      //         { text: 'Section B Item B', link: '...' }
+      //       ]
+      //     },
+      //     { text: 'Item B', link: '/item-2' },
+      //     { text: 'Item C', link: '/item-3' }
+      //   ]
+      // },
       {
-        text: 'Dropdown Menu',
-        items: [
-          {
-            text: '我是标题',
-            items: [
-              { text: 'Section A Item A', link: '...' },
-              { text: 'Section B Item B', link: '...' }
-            ]
-          },
-          { text: 'Item B', link: '/item-2' },
-          { text: 'Item C', link: '/item-3' }
-        ]
-      },
-      {
-        text: 'Merchandise',
+        text: '外链',
         link: 'https://www.thegithubshop.com/',
         target: '_self',
       }
@@ -42,7 +42,15 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '阅读清单',
+        collapsed: false,
+        items: [
+          { text: '高级程序设计3', link: '/books/JavaScript/JavaScript3' },
+          { text: '正则表达式', link: '/front/regexp.md' }
+        ]
+      },
+      {
+        text: '前端',
         collapsed: false,
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
@@ -50,24 +58,16 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Examples',
-        collapsed: true,
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      },
-      {
-        text: 'Section Title A',
+        text: '后端',
         items: [
           { text: 'Item A', link: '/item-a' },
           { text: 'Item B', link: '/item-b' },
         ]
       },
       {
-        text: 'Section Title B',
+        text: '其他',
         items: [
-          { text: 'Item C', link: '/item-c' },
+          { text: 'Git 操作', link: '/others/Git' },
           { text: 'Item D', link: '/item-d' },
         ]
       }

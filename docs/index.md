@@ -7,14 +7,14 @@ hero:
   name: "查漏补缺, 方得始终"
   # 被定义为 `h1` 标签
   text: "fix & enhance"
-  tagline: 记忆总是流失，总要记录点什么
+  tagline: The unexamined life is not worth living.
   image: 
     src: /public/logo.png
     alt: logo
   actions:
     - theme: brand
       text: 快速开始
-      link: /markdown-examples
+      link: /front/index.md
     - theme: alt
       text: Markdown 语法
       link: https://markdown.com.cn/basic-syntax/
@@ -23,14 +23,14 @@ hero:
       link: https://vitepress.dev/zh/reference/site-config
 
 features:
-  - icon: 🛠️
-    title: Feature A
+  - icon: 📖
+    title: 阅读清单
+    details: Knowledge is power
+    link: /books/index.md
+    # linkText: 快速开始
+  - title: TODO
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    link: /markdown-examples
-    linkText: 快速开始
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
+  - title: TODO
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 
 # 禁用页脚

@@ -60,7 +60,7 @@ export default defineConfig({
       {
         text: '后端',
         items: [
-          { text: 'Item A', link: '/item-a' },
+          { text: 'java', link: '/end/java' },
           { text: 'Item B', link: '/item-b' },
         ]
       },

@@ -130,3 +130,56 @@ System.out.println(index2); // e
 2. 如果格式不正确，就会抛出异常，程序终止
 
 :::
+
+## 访问修饰符
+
+|访问级别|访问修饰符|同类|同包|子类|不同包|
+|:-----:|:------:|:-:|:-:|:-:|:---:|
+|  公开 |  public | ✅| ✅ | ✅ | ✅ |
+| 受保护 |protected|✅| ✅ | ✅ | ❌ |
+|  默认 |  没有    | ✅| ✅ | ❌ | ❌ |
+|  私有 |  private | ✅| ❌ | ❌ | ❌ |
+
+## Java 的属性绑定机制
+
+:::warning
+Java 的**属性没有动态绑定机制**, 只有方法有动态绑定机制
+:::
+
+```java
+class Test {
+    String name = "Rose"; // 3 5
+
+    Test() {
+        System.out.println("Test"); // 1
+    }
+
+    Test(String name) {
+        // 属性没有动态绑定机制,哪里用,哪里变
+        this.name = name;
+    }
+}
+
+class Demo extends Test {
+    String name = "Jack"; // 4 6
+
+    Demo() {
+        super();
+        System.out.println("Demo"); // 2
+    }
+
+    Demo(String s) {
+        super(s);
+    }
+
+    public void test() {
+        System.out.println(super.name);
+        System.out.println(this.name);
+    }
+
+    public static void main(String[] args) {
+        new Demo().test();
+        new Demo("John").test();
+    }
+}
+```

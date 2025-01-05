@@ -183,3 +183,75 @@ class Demo extends Test {
     }
 }
 ```
+
+## 多态
+
+- 多态的前提是: 两个对象(类)存在继承关系
+- 多态的向上转型
+    1. 本质: 父类的引用指向了子类的对象
+    2. 语法: `父类类型 引用名 = new 子类类型();`
+    3. 特点: **编译类型看左边, 运行类型看右边**. 可以调用父类中的所有成员(需遵守访问权限); 不能调用子类中特有的成员; **最终运行效果看子类的具体实现!**
+- 多态的向下转型
+    1. 语法: `子类类型 引用名 = (子类类型) 父类引用;`
+    2. 只能强转父类的引用, 不能强转父类的对象
+    3. 要求父类的引用必须指向的是当前目标类型的对象
+    4. 当向下转型后, 可以调用子类类型中所有的成员
+
+:::tip
+多态: 方法或对象具有多种形态, 是 OOP 的第三大特征, 是建立在封装和继承基础之上
+
+1. 方法多态
+    1. 重载
+    2. 重写
+2. 对象多态
+    1. 对象的编译类型和运行类型可以不一致,编译类型在定义时就确定,不能变化
+    2. 对象的运行类型是可以变化的, 可以通过 getClass() 来查看运行类型
+    3. 编译类型看 “=” 号的左边, 运行类型看 “=” 号的右边
+
+:::
+
+```java
+class Person {
+    public void run() {
+        System.out.println("person run ");
+    }
+    public void eat() {
+        System.out.println("person eat");
+    }
+}
+
+class Student extends Person {
+    public void run() {
+        System.out.println("student run");
+    }
+    public void study() {
+        System.out.println("student study.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // 向上转型: 父类的引用指向子类对象
+        Person p = new Student();
+        p.eat(); // person eat
+        p.run(); // student run
+        // 向下转型
+        Student s = (Student) p;
+        s.study(); // student study
+        s.run(); // student run
+        s.eat(); // person eat
+    }
+}
+```
+
+## 动态绑定机制
+
+1. 当调用对象的方法时, 该方法会和对象的内存地址/运行类型绑定
+2. 当调用对象的属性时, 没有动态绑定机制, 哪里声明, 哪里使用
+
+## ==和equals的区别
+
+| 名称 | 概念 | 基本数据类型 | 引用类型 |
+|:--:|:--:|:--:|:--:|
+|==|比较运算符|可以,判断值是否相等|可以,判断两个对象是否相等|
+|equals|Object类的方法, Java 类都可以使用 equals|不可以|可以, 默认是判断两个对象是否相等,但是子类往往重写该方法,比较对象的属性是否相等|
